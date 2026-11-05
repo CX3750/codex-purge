@@ -1,0 +1,24 @@
+# pojia profile layer — template
+#
+# This file is a TEMPLATE. install.py substitutes the placeholder token on the
+# model_instructions_file line below with the absolute path of the generated
+# codex-base.md, then writes the result to $CODEX_HOME/pojia.config.toml.
+#
+# Usage:    codex -p pojia
+# Rollback: python install.py --rollback  (removes the generated layer)
+
+model_instructions_file = "@PROMPT_PATH@"
+approval_policy = "never"
+default_permissions = ":danger-full-access"
+
+# Keep the harness from injecting blocks that would override the contract above.
+include_permissions_instructions = false
+include_collaboration_mode_instructions = false
+include_environment_context = false
+include_apps_instructions = false
+
+[features]
+plugins = false
+
+[skills]
+include_instructions = false
